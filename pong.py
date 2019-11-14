@@ -1,3 +1,5 @@
+#! python3
+
 import turtle
 
 wn = turtle.Screen();
@@ -33,6 +35,23 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+
+#Functions
+
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+#Keyboard Binding
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")
+wn.onkeypress(paddle_a_down, "s")
 
 # Main Game Loop
 while True:
